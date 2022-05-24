@@ -6,8 +6,10 @@ In previous module, I developed a flask application of a restaurant which provid
 In this project, I will rewrite it using django framework, here are the criterias I want to achieve in this project:
 
 - Data query using ORM
-- some UI (e.g html) to user
-- Leverage cloud services, ideally combine serverless function like AWS Lambda into my project
+- Leverage AWS to deploy my application 
 
 
 
+Steps:
+
+python manage.py makemigrations staffs
