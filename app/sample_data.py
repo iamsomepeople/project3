@@ -47,11 +47,13 @@ def set_manager():
 
     first_manager.role = 'manager'
     first_manager.save()
-    print(first_manager.role)
 
     second_manager.role = 'manager'
     second_manager.save()
-    print(second_manager.role)
     
-
+    print(f'{first_manager.id} , {first_manager.password}')
+    print(f'{second_manager.id} , {second_manager.password}')
+    
+randomize_staff_member()
 set_password()
+set_manager()

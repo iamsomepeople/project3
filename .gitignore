@@ -1,0 +1,9 @@
+.DS_Store
+.vscode
+proj3
+docker-compose.yml
+data
+.env
+settings_bak.py
+migrations/
+__pycache__/

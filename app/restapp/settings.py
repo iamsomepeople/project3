@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +27,9 @@ SECRET_KEY = 'django-insecure-c*(lp+y5u4)9_-b!fu00&+-q6hhio5=zzdkmu&s*_48$07y-vj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0', 'localhost', 'ec2-54-219-136-130.us-west-1.compute.amazonaws.com'
+]
 
 
 # Application definition
@@ -83,11 +86,11 @@ WSGI_APPLICATION = 'restapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'proj3',
-        'HOST': 'localhost',
-        'USER': 'postgres',
-        'PASSWORD': 'admin123',
-        'PORT': '5432'
+        'NAME': config('DB_NAME'),
+        'HOST': config('DB_HOST'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'PORT': config('DB_PORT')
     }
 } 
 

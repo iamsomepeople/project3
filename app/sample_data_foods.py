@@ -32,7 +32,7 @@ def add_orders():
         o.staffs.add(ran_sid)
         o.food.add(ran_fid)
         
-
+add_foods()
 add_orders()
 
 
