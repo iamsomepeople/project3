@@ -84,15 +84,26 @@ WSGI_APPLICATION = 'restapp.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'HOST': config('DB_HOST'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'PORT': config('DB_PORT')
-    }
-} 
+            'default': {
+                'ENGINE': config('ENGINE'),
+                'NAME': config('DB_NAME'),
+                'HOST': config('DB_HOST'),
+                'USER': config('DB_USER'),
+                'PASSWORD': config('DB_PASSWORD'),
+                'PORT': config('DB_PORT')
+            }
+        }
+
+try:
+    if config('Mode') == 'test':
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+except:
+    pass
 
 
 # Password validation

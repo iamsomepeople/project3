@@ -6,3 +6,6 @@ psycopg2-binary==2.9.3
 faker
 pyjwt
 tk
+pytest==6.2.5
+pytest-django==4.4.0
+psutil

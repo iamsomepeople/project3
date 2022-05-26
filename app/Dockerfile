@@ -20,7 +20,7 @@ COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
 
 #Install tkinter
-RUN apt-get update && apt-get install -y libtk8.6 && apt-get install -y netcat
+RUN apt-get update && apt-get install -y libtk8.6 sqlite3 && apt-get clean
 
 WORKDIR /app
 COPY . /app

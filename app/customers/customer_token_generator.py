@@ -11,10 +11,10 @@ def encode(**kwargs):
     kwargs['expire_time'] = expiration_time
     token = jwt.encode(kwargs, key, algorithm="HS256")
     kwargs['token'] = token
-    print(kwargs)
+    # print(kwargs)
 
     token_serializer = TokenSerialzier(data=kwargs)
-    print(token_serializer.is_valid())
+    # print(token_serializer.is_valid())
 
     if token_serializer.is_valid():
         token_serializer.save()
