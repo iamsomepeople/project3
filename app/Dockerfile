@@ -9,12 +9,6 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
-ENV DB_NAME=proj3
-ENV DB_USER=postgres
-ENV DB_PASSWORD=admin123
-ENV DB_HOST=proj3.chdqtlecyckq.us-west-1.rds.amazonaws.com
-ENV DB_PORT=5432
-
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt

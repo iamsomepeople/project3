@@ -77,7 +77,7 @@ def add_new_staff(request):
                 if len(Staffs.objects.filter(ssn=request.data['ssn'])) == 0:
                     staff_serialize.save()
                     sid = Staffs.objects.values('id').filter(ssn=request.data['ssn'])[0]['id']
-                return JsonResponse({'msg': {sid}})
+                    return JsonResponse({'id': sid})
     else:
         return JsonResponse({'error_msg': 'You are not authorized to access this page'})
             
@@ -119,13 +119,15 @@ def get_all_orders(request):
 
 @api_view(['POST'])
 def assign_order(request):
+    if is_manager(request):
     # Make sure 'order_id' and 'staff_id' in the request.data
-    if 'order_id' in request.data and 'staff_id' in request.data:
-        if not str(request.data['order_id']).isnumeric() or not str(request.data['staff_id']).isnumeric():
-            print(request.data['staff_id'])
-            return JsonResponse({'error_msg': 'data on staff_id or order_id must an integer'})
-    else:        
-        return JsonResponse({'error_msg': 'missing staff_id or order_id'})
+        if 'order_id' in request.data and 'staff_id' in request.data:
+            if not str(request.data['order_id']).isnumeric() or not str(request.data['staff_id']).isnumeric():
+                return JsonResponse({'error_msg': 'data on staff_id or order_id must an integer'})
+        else:        
+            return JsonResponse({'error_msg': 'missing staff_id or order_id'})
+    else:
+        return JsonResponse({'error_msg': 'Only manager allowed to assign staffs to an order'})
 
 
     # Test if the order_id and staff exist in order and staff table
