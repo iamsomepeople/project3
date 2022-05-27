@@ -9,4 +9,3 @@ tk
 pytest==6.2.5
 pytest-django==4.4.0
 psutil
-markdown
