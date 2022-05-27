@@ -1,4 +1,4 @@
-# This is Joe Tam's portfolio project 3
+# Joe Tam's portfolio project 3
 
 ## Description
 In previous module, I developed a flask application of a restaurant which provided some simple functions like create an order, assigning staff to handle an order, etc.
@@ -111,7 +111,7 @@ In this project, I have re-written it using django framework, here are the crite
         
         
             
-            End of Joe Tam portfolio project 3
+* End of Joe Tam's Portfolio Project 3
 
 
 
