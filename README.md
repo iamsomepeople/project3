@@ -108,10 +108,7 @@ In this project, I have re-written it using django framework, here are the crite
 
     3. The token only valids for 30 minutes, you need to re-login when it is expired.
 
-        
-        
-            
-* End of Joe Tam's Portfolio Project 3
+
 
 
 
